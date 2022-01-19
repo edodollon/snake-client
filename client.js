@@ -15,7 +15,17 @@ const connect = function () {
     console.log(data.toString());
   });
 
+  // "connect" event that is triggered as soon as connection is successful
+  conn.on('connect', () => {
+    console.log("Successfully connected to the game server");
+    // Send string to server upon connection
+    conn.write("Name: POG");
+  })  
+
   return conn;
 };
+
+console.log("Connecting ...");
+connect();
 
 module.exports = connect;
