@@ -17,6 +17,10 @@ const handleUserInput = function (key) {
   if (key === '\u0003') {
     process.exit();
   };
+
+  if (key === 'i') {
+    connection.write("Say: FREE SHREK");
+  };
   if (key === 'w') {
     connection.write("Move: up");
   };
